@@ -17,7 +17,7 @@ func main() {
 
 	slog.SetDefault(slog.New(slog.NewJSONHandler(os.Stdout, nil)))
 
-	db, err := sql.Open("sqlite3", "file:a.db?mode=memory")
+	db, err := sql.Open("sqlite3", "file:?mode=memory")
 	if err != nil {
 		slog.ErrorContext(ctx, "failed to open db", slog.Any("error", err))
 		os.Exit(1)
